@@ -40,6 +40,16 @@ Material for workshops on Android Application Pentest
 
 `sudo apt install default-jdk`
 
+## Install jadx
+
+On Debian-based distributions you can install jadx directly from the package manager:
+
+`sudo apt install jadx`
+
+Then launch the GUI with:
+
+`jadx-gui`
+
 ## Download and install apktool
 
 Download the Linux wrapper script. (Right click, Save Link As apktool)  
@@ -58,6 +68,12 @@ Rename the downloaded jar to apktool.jar.
 Try running apktool via CLI.
 
 ## Get the APKs
+
+This repository already contains the workshop APKs:
+
+- `AndroGoat.apk`
+- `injuredandroid.apk`
+- `pivaa.apk`
 
 ### Get pivaa
 
@@ -98,6 +114,18 @@ sdk 29
 ## Which Android for AndroGoat
 
 sdk 18
+
+# Quick static analysis workflow
+
+1. Open an APK in `jadx-gui` to browse the decompiled Java/Kotlin code, resources, and `AndroidManifest.xml`.
+2. Decompile the same APK with apktool to inspect smali code and packaged resources:
+
+`apktool d pivaa.apk -o pivaa_apktool`
+
+3. Compare both outputs:
+
+- jadx is useful for understanding application logic quickly.
+- apktool is useful for checking resources, manifest settings, and lower-level smali code.
 
 # Set up proxy on emulator
 
